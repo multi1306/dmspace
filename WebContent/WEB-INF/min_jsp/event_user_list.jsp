@@ -1,15 +1,31 @@
 <%@ page contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="jl" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>	
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="common.js" type="text/javascript"></script>
+	<meta charset="UTF-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	
+	<link rel="stylesheet" type="text/css" href="./Resources/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./Resources/css/responsive.css">
+	<link href="./Resources/css/ihover.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="./Resources/js/jquery.js"></script>
+	<script type="text/javascript" src="./Resources/js/main.js"></script>
+	
+	<script src="common.js"></script>
+	<style type="text/css">
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	h1 {
+		text-align: center;
+	}
+	.search {
+	text-align: center;
+	}
+	</style>
 	<script>
 	$(document).ready(function(){
 
@@ -27,91 +43,102 @@
 	 	
 		ajaxGet(url,function(rt){
 	 			
-	 // ·Î±×ÀÎ ½ÇÆĞ½Ã : rt°ª -> ("/main_html.do")¿¡¼­ 10002 return
+	 // ë¡œê·¸ì¸ ì‹¤íŒ¨ì‹œ : rtê°’ -> ("/main_html.do")ì—ì„œ 10002 return
 	 if(rt =="10002"){ 
 		$("#login_nav").hide();				$("#non_login_nav").show();
 	}
 	 					
-	 // ·Î±×ÀÎ ½Ã : rt°ª -> user_name
+	 // ë¡œê·¸ì¸ ì‹œ : rtê°’ -> user_name
 	else if(rt!=""){ 
 	$("#login_nav").show();
 	$("#non_login_nav").hide(); 
-	$("#user_name").text(rt+"´ÔÀÌ ·Î±×ÀÎÇÏ¼Ì½À´Ï´Ù.");
+	$("#user_name").text(rt+"ë‹˜ì´ ë¡œê·¸ì¸í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}
 	 });	
-
-		
 		});
 
 	</script>
 
-
 </head>
-
-
 <body>	
-		<div class="jbTitle">
-	<h1>Multi Space</h1>
-</div>
 
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default ">
-	<div class="container">
-	 <div class="navbar-header">
-	   <a class="navbar-brand" href="main.html">multi space</a>
-	 </div>
+<section class="hero">
+		<header>
+			<div class="wrapper">
+				<!-- <a href="#"><img src="./Resources/img/logo.png" class="logo" alt="" titl=""/></a> -->
+				<a href="#" class="logo" alt="" titl="">Multi Space</a>
+				<nav class="navbar navbar-default">
 
- <div id="navbar" class="navbar-collapse collapse navbar-Menu ">
-	<ul class="nav navbar-nav ">
- 	 <li><a href="space_home.do">°ø°£</a></li>
-	 <li><a href="club_home.do">¸ğÀÓ</a></li>
-	 <li><a href="community_list.do">Ä¿¹Â´ÏÆ¼</a></li>
-	 <li><a href="event_user_list.do">ÀÌº¥Æ®</a></li>	
-	 <li><a href="notice_list.do">°øÁö»çÇ×</a></li>
-	 <li><a href="faq_list.do">FAQ</a></li>			
-	 <li><a href="admin_main.do">°ü¸®ÀÚ</a></li>			
-	</ul>
-			
-<ul id="login_nav" class="nav navbar-nav navbar-right">
-<li><a href="#" id="user_name"></a></li>
-	<li><a href="mypage_moveMypageMainPage.do">¸¶ÀÌÆäÀÌÁö</a></li>
-	<li><a href="home_logout.do">·Î±×¾Æ¿ô</a></li>	
-</ul>
+					<div id="navbar" class="navbar-collapse collapse navbar-Menu ">
 
-	<ul id="non_login_nav" class="nav navbar-nav navbar-right">
-	     <li><a href="#">·Î±×ÀÎ</a></li>		
-	</ul>
-
-	   </div>
-	</div>
-</nav>
-<!-- nav -->
-
-	
-	<form action="event_user_list.do">
-		<select name="eve_option">
-			<option value="0"></option>
-			<option value="1">Á¦¸ñ</option>
-			<option value="2">³»¿ë</option>
-			<option value="3">Á¦¸ñ+³»¿ë</option>
-		</select>
-		<input type="text" name="eve_key"/>
-		<input type="submit" value="Á¦Ãâ">	
-	</form>		
-			
-	<table border="1" cellspacing="0" cellpadding="8">
+						<ul class="nav navbar-nav ">
+							<li><a href="space_home.do">ê³µê°„</a></li>
+							<li><a href="club_home.do">ëª¨ì„</a></li>
+							<li><a href="community_list.do">ì»¤ë®¤ë‹ˆí‹°</a></li>
+							<li><a href="event_user_list.do">ì´ë²¤íŠ¸</a></li>
+							<li><a href="notice_list.do">ê³µì§€ì‚¬í•­</a></li>
+							<li><a href="faq_list.do">FAQ</a></li>
+							<li><a href="admin_main.do">ê´€ë¦¬ì</a></li>
+						</ul>
 		
-		<jl:forEach var="vo" items="${rl}">
-			<tr>
-				<td>${vo.eve_no}</td>
-				<td><a href="event_user_read.do?eve_no=${vo.eve_no}"><img src="thumbnail/${vo.eve_thumb_img}" height="100" width="100"/></a></td>
-				<td>
-					<a href="event_user_read.do?eve_no=${vo.eve_no}">${vo.eve_title}</a>
-				</td>
-			</tr>
-		</jl:forEach>
-	</table>
 
+						<ul id="login_nav" class="nav navbar-nav navbar-right">
+							<li><a href="#" id="user_name"></a></li>
+							<li><a href="mypage_moveMypageMainPage.do">ë§ˆì´í˜ì´ì§€</a></li>
+							<li><a href="home_logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
+						</ul>
+
+						<ul id="non_login_nav" class="nav navbar-nav navbar-right">
+							<li><a href="home_moveLoginPage.do">ë¡œê·¸ì¸</a></li>
+						</ul>
+
+
+					</div>
+				</nav>
+			</div>
+		</header><!--  end header section  -->
+
+
+	</section><!--  end hero section  -->
+
+
+<!-- nav -->
+<div class="container">
+<h1>Event Board</h1>
+	<form action="event_user_list.do" class="search">
+		<select name="eve_option">
+			<option value="0">ì„ íƒí•˜ì„¸ìš”</option>
+			<option value="1">ì œëª©</option>
+			<option value="2">ë‚´ìš©</option>
+			<option value="3">ì œëª©+ë‚´ìš©</option>
+		</select>
+		<input type="text" name="eve_key" placeholder="ì°¾ì„ ë‚´ìš©ì„ ì…ë ¥í•˜ì„¸ìš”"/>
+		<input type="submit" value="search">	
+	</form>		
+	
+	<section class="listings">
+		<div class="wrapper">
+			<ul class="properties_list">
+			<jl:forEach var="vo" items="${rl}">
+			<li>
+			<div class="ih-item square colored effect6 from_top_and_bottom"><a href="event_user_read.do?eve_no=${vo.eve_no}">
+			<div class="img"><img src="thumbnail/${vo.eve_thumb_img}" alt="img"></div>
+			<div class="info">
+				<h3>${vo.eve_no}. ${vo.eve_title}</h3>
+				<p><span class="property_size">${vo.eve_content}</span></p>
+			</div></a>
+		</div>
+		<a href="event_user_read.do?eve_no=${vo.eve_no}">
+		<div class="property_details">
+			<h1>Event #${vo.eve_no}<br/>${vo.eve_title}</h1>
+			<h2>${vo.the_time} </h2>
+		</div></a>
+			</li>
+			</jl:forEach>
+			</ul>
+		</div>
+	</section>
+</div>
 </body>
 </html>
 

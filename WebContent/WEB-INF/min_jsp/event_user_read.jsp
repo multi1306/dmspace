@@ -1,15 +1,22 @@
 <%@ page contentType="text/html; charset=utf-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="jl" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>	
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="common.js" type="text/javascript"></script>
+	<meta charset="UTF-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	
+	<link rel="stylesheet" type="text/css" href="./Resources/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./Resources/css/responsive.css">
+
+	<script type="text/javascript" src="./Resources/js/jquery.js"></script>
+	<script type="text/javascript" src="./Resources/js/main.js"></script>
+	
+	<script src="common.js"></script>
 	<script>
 	$(document).ready(function(){
 
@@ -27,71 +34,65 @@
 	 	
 		ajaxGet(url,function(rt){
 	 			
-	 // ·Î±×ÀÎ ½ÇÆĞ½Ã : rt°ª -> ("/main_html.do")¿¡¼­ 10002 return
+	 // ë¡œê·¸ì¸ ì‹¤íŒ¨ì‹œ : rtê°’ -> ("/main_html.do")ì—ì„œ 10002 return
 	 if(rt =="10002"){ 
 		$("#login_nav").hide();				$("#non_login_nav").show();
 	}
 	 					
-	 // ·Î±×ÀÎ ½Ã : rt°ª -> user_name
+	 // ë¡œê·¸ì¸ ì‹œ : rtê°’ -> user_name
 	else if(rt!=""){ 
 	$("#login_nav").show();
 	$("#non_login_nav").hide(); 
-	$("#user_name").text(rt+"´ÔÀÌ ·Î±×ÀÎÇÏ¼Ì½À´Ï´Ù.");
+	$("#user_name").text(rt+"ë‹˜ì´ ë¡œê·¸ì¸í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		}
 	 });	
-
-		
 		});
 
 	</script>
-
-
 </head>
 
 
 <body>	
-		<div class="jbTitle">
-	<h1>Multi Space</h1>
-</div>
+<section class="hero">
+		<header>
+			<div class="wrapper">
+				<!-- <a href="#"><img src="./Resources/img/logo.png" class="logo" alt="" titl=""/></a> -->
+				<a href="#" class="logo" alt="" titl="">Multi Space</a>
+				<nav class="navbar navbar-default">
 
-<!-- Fixed navbar -->
-<nav class="navbar navbar-default ">
-	<div class="container">
-	 <div class="navbar-header">
-	   <a class="navbar-brand" href="main.html">multi space</a>
-	 </div>
+					<div id="navbar" class="navbar-collapse collapse navbar-Menu ">
 
- <div id="navbar" class="navbar-collapse collapse navbar-Menu ">
-	<ul class="nav navbar-nav ">
- 	 <li><a href="space_home.do">°ø°£</a></li>
-	 <li><a href="club_home.do">¸ğÀÓ</a></li>
-	 <li><a href="community_list.do">Ä¿¹Â´ÏÆ¼</a></li>
-	 <li><a href="event_user_list.do">ÀÌº¥Æ®</a></li>	
-	 <li><a href="notice_list.do">°øÁö»çÇ×</a></li>
-	 <li><a href="faq_list.do">FAQ</a></li>			
-	 <li><a href="admin_main.do">°ü¸®ÀÚ</a></li>			
-	</ul>
-			
-<ul id="login_nav" class="nav navbar-nav navbar-right">
-<li><a href="#" id="user_name"></a></li>
-	<li><a href="mypage_moveMypageMainPage.do">¸¶ÀÌÆäÀÌÁö</a></li>
-	<li><a href="home_logout.do">·Î±×¾Æ¿ô</a></li>	
-</ul>
+						<ul class="nav navbar-nav ">
+							<li><a href="space_home.do">ê³µê°„</a></li>
+							<li><a href="club_home.do">ëª¨ì„</a></li>
+							<li><a href="community_list.do">ì»¤ë®¤ë‹ˆí‹°</a></li>
+							<li><a href="event_user_list.do">ì´ë²¤íŠ¸</a></li>
+							<li><a href="notice_list.do">ê³µì§€ì‚¬í•­</a></li>
+							<li><a href="faq_list.do">FAQ</a></li>
+							<li><a href="admin_main.do">ê´€ë¦¬ì</a></li>
+						</ul>
+		
 
-	<ul id="non_login_nav" class="nav navbar-nav navbar-right">
-	     <li><a href="#">·Î±×ÀÎ</a></li>		
-	</ul>
+						<ul id="login_nav" class="nav navbar-nav navbar-right">
+							<li><a href="#" id="user_name"></a></li>
+							<li><a href="mypage_moveMypageMainPage.do">ë§ˆì´í˜ì´ì§€</a></li>
+							<li><a href="home_logout.do">ë¡œê·¸ì•„ì›ƒ</a></li>
+						</ul>
 
-	   </div>
-	</div>
-</nav>
-<!-- nav -->
+						<ul id="non_login_nav" class="nav navbar-nav navbar-right">
+							<li><a href="home_moveLoginPage.do">ë¡œê·¸ì¸</a></li>
+						</ul>
 
 
-			
-			Á¦¸ñ :<input type="text" name="eve_title" value="${text.eve_title}" readonly /><br/>
-			³»¿ë :<textarea name="eve_content" rows="7" cols="40" readonly >${text.eve_content}</textarea><br/>
-				<img src="thumbnail/${text.eve_thumb_img}" height="100" width="100"/> <br/>
-			<input type="button" value="¸ñ·Ï" onclick= "window.location.href='event_user_list.do'">
+					</div>
+				</nav>
+			</div>
+		</header><!--  end header section  -->
+	</section><!--  end hero section  -->
+	
+			ì œëª© :${text.eve_title}<br/>
+			ë‚´ìš© :${text.eve_content}<br/>
+			<img src="thumbnail/${text.eve_thumb_img}" height="400" width="400"/> <br/>
+			<input type="button" value="ëª©ë¡" onclick= "window.location.href='event_user_list.do'">
 </body>
 </html>

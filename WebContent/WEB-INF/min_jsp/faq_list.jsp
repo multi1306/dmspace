@@ -6,19 +6,9 @@ taglib
 <head>
 <!-- 김소영 -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-
-.jumbotron {
-	background-color: orange;
-}
-
-.FAQ {
-	color: white;
-	text-align: center;
-}
 
 .table {
 	text-align: center;
@@ -29,10 +19,8 @@ taglib
 	text-align: center;
 }
 </style>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="common.js" type="text/javascript"></script>
 
@@ -76,7 +64,7 @@ taglib
 </head>
 <body>
 	
-	<div class="jbTitle">
+<div class="jbTitle">
 	<h1>Multi Space</h1>
 </div>
 
@@ -112,12 +100,6 @@ taglib
 	</div>
 </nav>
 <!-- nav -->
-	
-	<div class="jumbotron">
-		<div class="FAQ">
-			<h1>F A Q</h1>
-		</div>
-	</div>
 
 	<%-- 되는테이블<table border="1" class="table table-hover" >
 		<tr>

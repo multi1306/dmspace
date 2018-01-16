@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <%@taglib prefix="jl" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
@@ -17,13 +17,12 @@
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-.jumbotron {
-	text-align: center;
+
+#time {
+	text-align: right;
 }
 
-th, td {
-	text-align: center;
-}
+
 </style>
 <script>
 	$(document).ready(function() {
@@ -92,22 +91,52 @@ th, td {
 		</div>
 	</nav>
 	<!-- nav -->
-	<div id="i" class="jumbotron panel-primary">
-		<h1>공지사항</h1>
+	
+	<div class="container">
+		<h2>NOTICE Board</h2>
+		<div class="panel-group" id="accordion" role="tablist"
+			aria-multiselectable="true">
+			<jl:forEach var="vo" items="${rl}">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="headingOne">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#${vo.notice_no}" aria-expanded="true"
+								aria-controls="collapseOne">
+								<table>
+									<tr>
+									<th width="50">${vo.notice_no}</th>
+									<th width="400"> ${vo.notice_title}</th>
+									<th>${vo.the_time }</th>
+									</tr>
+								</table>
+								  </a> 
+						</h4>
+					</div>
+					<div id="${vo.notice_no}" class="panel-collapse collapse"
+						role="tabpanel" aria-labelledby="headingOne">
+						<div class="panel-body">${vo.notice_content}</div>
+					</div>
+				</div>
+			</jl:forEach>
+		</div>
 	</div>
-	<table border="1" cellspacing="0" cellpadding="8">
-		<tr>
-			<th width="40">공지번호</th>
-			<th width="200">제목</th>
-			<th>날짜</th>
-		</tr>
-		<jl:forEach var="vo" items="${rl}">
+	
+	<div class="container">
+		<table border="1" cellspacing="0" cellpadding="8">
 			<tr>
-				<td>${vo.notice_no}</td>
-				<td><a href="notice_read.do?notice_no=${vo.notice_no}">${vo.notice_title}</a></td>
-				<td>${vo.the_time}</td>
+				<th width="40">공지번호</th>
+				<th width="200">제목</th>
+				<th>날짜</th>
 			</tr>
-		</jl:forEach>
-	</table>
+			<jl:forEach var="vo" items="${rl}">
+				<tr>
+					<td>${vo.notice_no}</td>
+					<td><a href="notice_read.do?notice_no=${vo.notice_no}">${vo.notice_title}</a></td>
+					<td>${vo.the_time}</td>
+				</tr>
+			</jl:forEach>
+		</table>
+	</div>
 </body>
 </html>
