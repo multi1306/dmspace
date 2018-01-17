@@ -1,5 +1,5 @@
-<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%><%@taglib
-	prefix="jl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@taglib prefix="jl" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,13 +47,11 @@
     <![endif]-->
 </head>
 <body>
-
-	
-
+	<br>
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">판매자 신청 리스트</div>
+				<div class="panel-heading">자유게시판</div>
 				<!-- /.panel-heading -->
 				<div class="panel-body">
 					<table width="100%"
@@ -61,53 +59,38 @@
 						id="dataTables-example">
 						<thead>
 							<tr>
-								<td>사업자 번호</td>
-								<td>유저 ID</td>
-								<td>판매자 이름</td>
-								<td>판매자 계좌</td>
-								<td>주소</td>
-								<td>참고사항(거절 사항)</td>
+								<th>NO</th>
+								<th>TITLE</th>
+								<th>TIME</th>
+								<th>ID</th>
+								<th>VIEW</th>
+								<th>LIKE</th>
 							</tr>
-						</thead>	
-							<tr>
-								<td>${vo.crn}</td>
-								<td>${vo.user_id}</td>
-								<td>${vo.host_name}</td>
-								<td>${vo.host_account}</td>
-								<td>${vo.zipcode}</td>
-								<td>${vo.etc}</td>
-							</tr>
+							</thead>	
+								<jl:forEach var="vo" items="${rl}">
+									<tr>
+										<td>${vo.com_board_no}</td>
+										<td><a
+											href="admin_community_board_read.do?com_board_no=${vo.com_board_no}">${vo.com_board_title}</a></td>
+										<td>${vo.the_time}</td>
+										<td>${vo.user_id}</td>
+										<td>${vo.view_count}</td>
+										<td>${vo.recom_count}</td>
+									</tr>
+
+								</jl:forEach>
 						</table>
 					<!-- /.table-responsive -->
-					<div>
- 					<form method="post" action="admin_host_user_accept.do">
-						<input type="hidden" name="crn" value="${vo.crn}"></input> <input
-							type="hidden" name="user_id" value="${vo.user_id}"></input> <input
-							type="hidden" name="host_name" value="${vo.host_name}"></input> <input
-							type="hidden" name="host_account" value="${vo.host_account}"></input>
-						<input type="hidden" name="zipcode" value="${vo.zipcode}"></input>
-						<button class="btn" type="submit">판매자 등록 하기</button>
+					<form id="textsearch" action="admin_community_board_search.do">
+						<select name="commsearch_option">
+							<option value="0">선택해주세요</option>
+							<option value="1">제목</option>
+							<option value="2">내용</option>
+							<option value="3">제목 + 내용</option>
+							<option value="4">작성자</option>
+						</select> 검색 : <input type="text" name="commsearch_content"> <input
+							type="submit" value="검색">
 					</form>
-				
-					<form method="post" action="admin_host_user_refuse_write.do">
-						<input type="hidden" name="host_apply_no"
-							value="${vo.host_apply_no}"></input> <input type="hidden"
-							name="etc" value="${vo.etc}"></input>
-						<button class="btn" type="submit">참고 사항(거절 사항) 작성 하기</button>
-					</form>
-					
-					<form method="post" action="admin_host_user_remove_request.do">
-						<input type="hidden" name="host_apply_no"
-							value="${vo.host_apply_no}"></input>
-						<button  class="btn" type="submit">판매자 신청 사항 삭제</button>
-					</form>
-				
-					<form method="post" action="admin_host_request.do">
-						<button class="btn" type="submit">취소 하기</button>
-					</form> 
-				</div>
-
-
 
 				</div>
 				<!-- /.panel-body -->
@@ -146,4 +129,5 @@
 		});
 	</script>
 </body>
-</html>				
+</html>
+

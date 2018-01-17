@@ -8,6 +8,21 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style type="text/css">
+.select {
+	float: left;
+}
+
+.select1 {
+	float: left;
+}
+
+.select2 {
+	float: left;
+}
+
+.select3 {
+	float: left;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -47,134 +62,129 @@
     <![endif]-->
 </head>
 <body>
-	<h1>공간 리스트</h1>
+	<br>
 
-	<form id="textsearch" action="admin_spaces_search.do">
-		<select name="search_option">
-			<option value="0">검색할 것을 선택해주세요</option>
-			<option value="1">사업자 등록번호</option>
-			<option value="2">공간 이름</option>
-			<option value="3">공간 내용</option>
-			<option value="4">오픈 시간</option>
-			<option value="5">클로즈 시간</option>
-			<option value="6">가격</option>
-			<option value="7">최대 인원</option>
-			<option value="8">최소 인원</option>
-			<option value="9">공간 전화 번호</option>
-			<option value="10">주소</option>
-			<option value="11">공간 카테고리</option>
-			<option value="12">장소 카테고리</option>
-			<option value="13">생성일</option>
-			<option value="14">공간 이름 + 내용</option>
-		</select> &nbsp;<input type="text" name="search_content"> <input
-			type="submit" value="검색">
-	</form>
-
-	<br>
-	<br>
-	<form id="textsearch" action="admin_spaces_search2.do">
-		<select name="search_option">
-			<option value="0">정렬을 선택해주세요</option>
-			<option value="1">최신 순</option>
-			<option value="2">오래된 순</option>
-			<option value="3">비싼 가격 순</option>
-			<option value="4">싼 가격 순</option>
-		</select> <input type="submit" value="전체 정렬하기">
-	</form>
-	<br>
-	<br>
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
-				<div class="panel-heading">공간리스트!
-				
-				
-				
-				</div>
-				<!-- /.panel-heading -->
-				<div class="panel-body">
-					<table width="100%"
-						class="table table-striped table-bordered table-hover"
-						id="dataTables-example">
-						<thead>
-							<tr>
-								<th>사업자 등록 번호</th>
-								<th>공간 이름</th>
-								<th>공간 내용</th>
-								<th>공간 썸브네일 이미지</th>
-								<th>오픈 시간</th>
-								<th>클로즈 시간</th>
-								<th>가격</th>
-								<th>최대 인원</th>
-								<th>최소 인원</th>
-								<th>공간 번호</th>
-								<th>주소</th>
-								<th>공간 카테고리</th>
-								<th>장소 카테고리</th>
-								<th>생성일</th>
-								<th>삭제하기</th>
-							</tr>
-							</thead>
-							<jl:forEach var="vo" items="${ls}">
-								<tr>
-									<td><a href="admin_space_crn_check.do?crn=${vo.crn}">${vo.crn}</a></td>
-									<td>${vo.space_title}</td>
-									<td>${vo.space_content}</td>
-									<td><a href="space_detail.do?space_no=${vo.space_no}"><img
-											src="thumbnail/${vo.space_thumb_img}"
-											style="width: 128px; height: 128px;"></img></a></td>
-									<td>${vo.open_time}</td>
-									<td>${vo.close_time}</td>
-									<td>${vo.price}</td>
-									<td>${vo.max_people}</td>
-									<td>${vo.min_people}</td>
-									<td>${vo.space_call}</td>
-									<td>${vo.zipcode}</td>
-									<td>${vo.s_category_no}</td>
-									<td>${vo.l_category_no}</td>
-									<td>${vo.the_time}</td>
-									<td><a
-										href="admin_space_remove.do?space_no=${vo.space_no}">삭제</a></td>
-								</tr>
-							</jl:forEach>
-					</table>
-					<!-- /.table-responsive -->
+				<div class="panel-heading">공간리스트<br></div><!-- /.panel-heading -->
 
-				</div>
-				<!-- /.panel-body -->
-			</div>
-			<!-- /.panel -->
-		</div>
-		<!-- /.col-lg-12 -->
-	</div>
+			<div class="col-lg-6">
+					<br>
+					<div class="select">
+						<form id="textsearch" action="admin_spaces_search.do">
+							<div class="select1">
+								<select name="search_option" class="form-control">
+									<option value="0">선택</option>
+									<option value="1">사업자 등록번호</option>
+									<option value="2">공간 이름</option>
+									<option value="3">공간 내용</option>
+									<option value="4">오픈 시간</option>
+									<option value="5">클로즈 시간</option>
+									<option value="6">가격</option>
+									<option value="7">최대 인원</option>
+									<option value="8">최소 인원</option>
+									<option value="9">공간 전화 번호</option>
+									<option value="10">주소</option>
+									<option value="11">공간 카테고리</option>
+									<option value="12">장소 카테고리</option>
+									<option value="13">생성일</option>
+									<option value="14">공간 이름 + 내용</option>
+								</select>
+							</div>
 
-	<!-- jQuery -->
-	<script src="./Resouces_admin/vendor/jquery/jquery.min.js"></script>
+							<div class="select2">
+								<input class="form-control" type="text" name="search_content">
+							</div>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="./Resouces_admin/vendor/bootstrap/js/bootstrap.min.js"></script>
+							<div class="select3">
+								<input class="btn" type="submit" value="검색">
 
-	<!-- Metis Menu Plugin JavaScript -->
-	<script src="./Resouces_admin/vendor/metisMenu/metisMenu.min.js"></script>
+							</div>
+						</form>
 
-	<!-- DataTables JavaScript -->
-	<script
-		src="./Resouces_admin/vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script
-		src="./Resouces_admin/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-	<script
-		src="./Resouces_admin/vendor/datatables-responsive/dataTables.responsive.js"></script>
+					</div>
+				</div> 
 
-	<!-- Custom Theme JavaScript -->
-	<script src="../Resouces_admin/dist/js/sb-admin-2.js"></script>
+				<div class="col-lg-6">
+					<br>
+					<div class="select">
+						<form id="textsearch" action="admin_spaces_search2.do">
 
-	<!-- Page-Level Demo Scripts - Tables - Use for reference -->
-	<script>
-		$(document).ready(function() {
-			$('#dataTables-example').DataTable({
-				responsive : true
-			});
-		});
-	</script>
+							<div class="select2">
+								<select name="search_option" class="form-control">
+									<option value="0">정렬을 선택해주세요</option>
+									<option value="1">최신 순</option>
+									<option value="2">오래된 순</option>
+									<option value="3">비싼 가격 순</option>
+									<option value="4">싼 가격 순</option>
+								</select>
+							</div>
+
+							<div class="select3">
+								<input type="submit" class="btn" value="전체 정렬하기">
+							</div>
+						</form>
+					</div>
+				</div> 
+
+
+			<div class="panel-body">
+				<br> <br> <br>
+				<table width="100%"
+					class="table table-striped table-bordered table-hover"
+					id="dataTables-example">
+					<thead>
+						<tr>
+							<th>사업자 등록 번호</th>
+							<th>공간 이름</th>
+							<th>공간 내용</th>
+							<th>공간 썸브네일 이미지</th>
+							<th>오픈 시간</th>
+							<th>클로즈 시간</th>
+							<th>가격</th>
+							<th>최대 인원</th>
+							<th>최소 인원</th>
+							<th>공간 번호</th>
+							<th>주소</th>
+							<th>공간 카테고리</th>
+							<th>장소 카테고리</th>
+							<th>생성일</th>
+							<th>삭제하기</th>
+						</tr>
+					</thead>
+					<jl:forEach var="vo" items="${ls}">
+						<tr>
+							<td><a href="admin_space_crn_check.do?crn=${vo.crn}">${vo.crn}</a></td>
+							<td>${vo.space_title}</td>
+							<td>${vo.space_content}</td>
+							<td><a href="space_detail.do?space_no=${vo.space_no}"><img
+									src="thumbnail/${vo.space_thumb_img}"
+									style="width: 128px; height: 128px;"></img></a></td>
+							<td>${vo.open_time}</td>
+							<td>${vo.close_time}</td>
+							<td>${vo.price}</td>
+							<td>${vo.max_people}</td>
+							<td>${vo.min_people}</td>
+							<td>${vo.space_call}</td>
+							<td>${vo.zipcode}</td>
+							<td>${vo.s_category_no}</td>
+							<td>${vo.l_category_no}</td>
+							<td>${vo.the_time}</td>
+							<td><a href="admin_space_remove.do?space_no=${vo.space_no}">삭제</a></td>
+						</tr>
+					</jl:forEach>
+				</table>
+				<!-- /.table-responsive -->
+                    </div>
+                      		  <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+</div>
+        
+
+
 </body>
 </html>
