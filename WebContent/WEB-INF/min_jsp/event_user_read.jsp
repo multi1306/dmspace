@@ -5,18 +5,29 @@
 <!DOCTYPE html>
 <html>
 <head>	
-	<meta charset="UTF-8">
-	<meta name="author" content="pixelhint.com">
-	<meta name="description" content="La casa free real state fully responsive html5/css3 home page website template"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<title>Welcome to Multi Space</title>
 	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+		
 	<link rel="stylesheet" type="text/css" href="./Resources/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./Resources/css/responsive.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
 	<script type="text/javascript" src="./Resources/js/jquery.js"></script>
 	<script type="text/javascript" src="./Resources/js/main.js"></script>
-	
-	<script src="common.js"></script>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./common.js"></script>
+	<style type="text/css">
+	.button{
+		text-align: center;
+	}
+	.table{
+		text-align: center;
+	}
+	</style>
 	<script>
 	$(document).ready(function(){
 
@@ -89,10 +100,70 @@
 			</div>
 		</header><!--  end header section  -->
 	</section><!--  end hero section  -->
+	<div class="container">
+		<table class="table table-hover">
+			<tr><td><h3>EVENT #${text.eve_no}  ${text.eve_title}</h3></td></tr>
+			<tr><td><h4>${text.eve_content}</h4></td></tr>
+			<tr><td><img src="thumbnail/${text.eve_thumb_img}" height="400" width="400"/></td></tr>
+		</table>
+			<div class="button">
+				<input type="button"  class="btn btn-primary" value="목록" onclick= "window.location.href='event_user_list.do'">
+			</div>
+	</div>
+<!-- ******************************* footer ******************************* -->
+
+	<footer>
+		<div class="wrapper footer">
+			<ul>
+			
+				<li class="about_multi">
+						<p>상호명 : 멀티스페이스</p>
+						<p>프로젝트 명 : multi space</p>
+						<p>개발자 : 허빛찬샘 | 안수진 | 김세환 | 배승현 |</p>
+						<p>조우열 | 이양재 | 임승범 | 김소영</p>
+						<p>기  간 : 17/12/22 - 18/01/24</p>
+						<p>이메일 : tnwls2274@naver.com</p>
+				 </li>
+			
+			
+				<li class="about_multi">
+						<p>계좌번호 :</p>
+						<p>(국민은행) 464801 - 01 - 061719</p>
+						<p>고객센터 :</p>
+						<p>AM 10: 00 ~ PM6 : 00</p>
+						<p>(오전 9시부터 오후 6시까지 가능합니다.)</p>
+						<p>개인정보관리 책임자 : </p>
+						<p>이숙희 (madhjh@redholic.com)</p>
+				 </li>
+			
+			
+				<li class="links">
+					<ul>
+						<li><a href="#">공간 예약</a></li>
+						<li><a href="#">모임</a></li>
+						<li><a href="#">커뮤니티</a></li>
+						<li><a href="#">공지사항</a></li>
+						<li><a href="#">이벤트</a></li>
+					</ul>
+				</li>
+				
+				<li class="about">
+					<ul>
+						<li><a href="http://facebook.com/pixelhint" class="facebook" target="_blank"></a></li>
+						<li><a href="http://twitter.com/pixelhint" class="twitter" target="_blank"></a></li>
+						<li><a href="http://plus.google.com/+Pixelhint" class="google" target="_blank"></a></li>
+						<li><a href="#" class="skype"></a></li>
+					</ul>
+				 </li>
+			
+
 	
-			제목 :${text.eve_title}<br/>
-			내용 :${text.eve_content}<br/>
-			<img src="thumbnail/${text.eve_thumb_img}" height="400" width="400"/> <br/>
-			<input type="button" value="목록" onclick= "window.location.href='event_user_list.do'">
+			</ul>
+		</div>
+
+		<div class="copyrights wrapper">
+			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">MultiSpace</a>. All Rights Reserved.
+		</div>
+	</footer><!--  end footer  -->
 </body>
 </html>
