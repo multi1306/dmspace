@@ -8,13 +8,70 @@
 	
 	<link rel="stylesheet" type="text/css" href="./Resources/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="./Resources/css/responsive.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	
 	<script type="text/javascript" src="./Resources/js/jquery.js"></script>
 	<script type="text/javascript" src="./Resources/js/main.js"></script>
+	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./common.js"></script>
+<script>
+	/* function ajaxGet( url, a, b, c ){
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if( xhr.readyState == 4 ){
+				if( xhr.status == 200 ){
+					a( xhr.responseText );
+				}
+				else if( xhr.status == 404 ){
+					alert("404");
+					if( b ){
+						b();
+					}
+				}
+				else if( xhr.status == 500 ){
+					if( c != undefined ){
+						c();
+					}
+				}
+			}
+		};
+		xhr.open("GET",url,true);
+		xhr.send(null);
+	}	 */
+	$(document).ready(function(){
+		
+		var scOffset = $('.navbar-Menu').offset();
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > scOffset.top) {
+				$('.navbar').addClass('navbar-fixed-top');
+			} else {
+				$('.navbar').removeClass('navbar-fixed-top');
+			}
+		});
+		
+		
+		
+		var url = "chk_login.do";
+ 		ajaxGet(url,function(rt){
+ 			
+ 				// 로그인 실패시 : rt값 -> ("/main_html.do")에서 10002 return
+ 				if(rt =="10002"){ 
+					$("#login_nav").hide();
+					$("#non_login_nav").show();
+				}
+ 					
+ 				// 로그인 시 : rt값 -> user_name
+				else if(rt!=""){ 
+					$("#login_nav").show();
+					$("#non_login_nav").hide();
+					$("#user_name").text(rt+"님이 로그인하셨습니다.");
+				}
+ 			});	
+	});
 
+	</script>
 </head>
 <body>
 
@@ -223,7 +280,8 @@
 			
 			
 			<div class="more_listing">
-				<a href="#" class="more_listing_btn">View More Listings</a>
+				<!-- <a href="#" class="more_listing_btn">View More Listings</a> -->
+				<a href="#" class="more_listing_btn_square">View More Listings</a>
 			</div>
 		</div>
 	</section>	
@@ -281,7 +339,7 @@
 		</div>
 
 		<div class="copyrights wrapper">
-			Copyright © 2015 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">MultiSpace</a>. All Rights Reserved.
+			Copyright ⓒ 2018 <a href="http://pixelhint.com" target="_blank" class="ph_link" title="Download more free Templates">MultiSpace</a>. All Rights Reserved.
 		</div>
 	</footer><!--  end footer  -->
 	
