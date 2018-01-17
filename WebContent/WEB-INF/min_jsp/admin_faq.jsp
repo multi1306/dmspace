@@ -10,23 +10,6 @@ taglib
 <style type="text/css">
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-.jumbotron {
-	background-color: orange;
-}
-
-.FAQ {
-	color: white;
-	text-align: center;
-}
-
-.table {
-	text-align: center;
-	border-color: center;
-}
-
-.ask {
-	text-align: center;
-}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
